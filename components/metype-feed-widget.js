@@ -1,5 +1,5 @@
 import React from "react";
-import {MetypeScripts, scriptLoader} from "./metype-script-loader";
+import {scriptLoader} from "./metype-script-loader";
 
 class MetypeFeedWidget extends React.Component {
 
