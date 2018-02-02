@@ -2,8 +2,8 @@
   "name": "@metype/metype-react",
   "version": "1.0.0",
   "description": "React wrapped component built around metype",
-  "main": "index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/quintype/metype-react.git"
