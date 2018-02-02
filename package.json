@@ -1,0 +1,30 @@
+{
+  "name": "@metype/metype-react",
+  "version": "1.0.0",
+  "description": "React wrapped component built around metype",
+  "main": "index.js",
+  "module": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quintype/metype-react.git"
+  },
+  "keywords": [
+    "quintype",
+    "metype",
+    "metype comments",
+    "metype feed"
+  ],
+  "author": "Quintype Developers <dev-core@quintype.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quintype/metype-react/issues"
+  },
+  "homepage": "https://github.com/quintype/metype-react#readme",
+  "dependencies": {
+    "react": "^16.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    
+  }
+}
