@@ -28,7 +28,7 @@ class MetypeFeedWidget extends React.Component {
   render() {
     const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor} = this.props;
 
-    return <div id={`feed-metype-container`}
+    return <div id="feed-metype-container"
                 ref={(el) => this.metypeFeedWidget = el }
                 className='feed-iframe-container'
                 data-metype-account-id={accountId}

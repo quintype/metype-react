@@ -31,9 +31,9 @@ class MetypeWidget extends React.Component {
     const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor, pageURL, windowHeight, windowWidth} = this.props;
 
     return <div>
-      <div id={`metype-container-${this.randomNumber}`}
+      <div id={'metype-container-' + this.randomNumber}
            ref={(el) => this.metypeWidget = el }
-           className={`iframe-container ${className}`}
+           className={'iframe-container' + className}
            data-metype-account-id={accountId}
            data-metype-host={host} //Change fallback to deployed domain name
            data-metype-primary-color={primaryColor || '#3a9fdd'}
