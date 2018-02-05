@@ -10,6 +10,8 @@
  
 >* Metype-Feed-widget [ *realtime feed of all the comments on the site* ]
 
+>* Metype-Contribution-Widget [ *submit content to the system* ]
+
 
 ## Installation
 
@@ -23,6 +25,8 @@
 > `import { MetypeFeedWidget } from "@metype/components";`
 
 > `import { MetypeWidget } from "@metype/components";`
+
+> `import { MetypeContributionWidget } from "@metype/components";`
 
 ### Code Samples
 
@@ -47,6 +51,11 @@
           className = {'<-class name for styling->}
           secondaryColor = {'<-Hex code of required color->'}
           fontColor = {'<-Hex code of required color->'}        
+          publisher={'<-publisher name->'} />       
+---
+    <MetypeContributionWidget
+          host={'<-hostname->'}
+          accountId={<-account id->}      
           publisher={'<-publisher name->'} />
 
 
