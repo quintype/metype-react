@@ -256,7 +256,7 @@ var MetypeContributionWidget = function (_React$Component) {
     key: "initWidget",
     value: function initWidget(randomNumber) {
       if (window.talktype) {
-        window.talktype.initContributionWidget(document.getElementById("metype-contribution-" + randomNumber));
+        window.talktype.contributionWidgetIframe(document.getElementById("metype-contribution-" + randomNumber));
       }
     }
   }, {

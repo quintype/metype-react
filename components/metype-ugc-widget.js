@@ -15,7 +15,7 @@ class MetypeContributionWidget extends React.Component {
 
   initWidget(randomNumber){
     if (window.talktype) {
-      window.talktype.initContributionWidget(document.getElementById(`metype-contribution-${randomNumber}`));
+      window.talktype.contributionWidgetIframe(document.getElementById(`metype-contribution-${randomNumber}`));
     }
   }
 
