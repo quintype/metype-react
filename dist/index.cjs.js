@@ -157,19 +157,19 @@ var MetypeFeedWidget = function (_React$Component) {
   return MetypeFeedWidget;
 }(React.Component);
 
-var MetypeWidget = function (_React$Component) {
-  inherits(MetypeWidget, _React$Component);
+var MetypeCommentingWidget = function (_React$Component) {
+  inherits(MetypeCommentingWidget, _React$Component);
 
-  function MetypeWidget(props) {
-    classCallCheck(this, MetypeWidget);
+  function MetypeCommentingWidget(props) {
+    classCallCheck(this, MetypeCommentingWidget);
 
-    var _this = possibleConstructorReturn(this, (MetypeWidget.__proto__ || Object.getPrototypeOf(MetypeWidget)).call(this, props));
+    var _this = possibleConstructorReturn(this, (MetypeCommentingWidget.__proto__ || Object.getPrototypeOf(MetypeCommentingWidget)).call(this, props));
 
     _this.randomNumber = new Date().getMilliseconds();
     return _this;
   }
 
-  createClass(MetypeWidget, [{
+  createClass(MetypeCommentingWidget, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -233,7 +233,7 @@ var MetypeWidget = function (_React$Component) {
       );
     }
   }]);
-  return MetypeWidget;
+  return MetypeCommentingWidget;
 }(React.Component);
 
 var MetypeContributionWidget = function (_React$Component) {
@@ -288,6 +288,6 @@ var MetypeContributionWidget = function (_React$Component) {
 }(React.Component);
 
 exports.MetypeFeedWidget = MetypeFeedWidget;
-exports.MetypeWidget = MetypeWidget;
+exports.MetypeCommentingWidget = MetypeCommentingWidget;
 exports.scriptLoader = scriptLoader;
 exports.MetypeContributionWidget = MetypeContributionWidget;
