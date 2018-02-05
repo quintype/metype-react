@@ -1,3 +1,4 @@
+
 # Metype React
 
 ## Introduction
@@ -11,46 +12,42 @@
 
 ## Code Samples
 
-> ```javascript
-<MetypeWidget
-      host={'<-hostname->'}
-      accountId={<-account id->}
-      pageURL={'<-url of current page->'}
-      primaryColor={'<-Hex code of required color->'}
-      className = {'<-class name for styling->}
-      secondaryColor = {'<-Hex code of required color->'}
-      fontColor = {'<-Hex code of required color->'} 
-      windowHeight = {'<-preferable window height || -defaults to the required height>'} 
-      windowWidth = {'<-preferable window width || -defaults to 100% width of the parent container>''} />
-```
 
-> ```javascript
-<MetypeFeedWidget
-      host={'<-hostname->'}
-      accountId={<-account id->}
-      primaryColor={'<-Hex code of required color->'}
-      className = {'<-class name for styling->}
-      secondaryColor = {'<-Hex code of required color->'}
-      fontColor = {'<-Hex code of required color->'}        
-      publisher={'<-publisher name->'} />
-```
+    <MetypeWidget
+          host={'<-hostname->'}
+          accountId={<-account id->}
+          pageURL={'<-url of current page->'}
+          primaryColor={'<-Hex code of required color->'}
+          className = {'<-class name for styling->}
+          secondaryColor = {'<-Hex code of required color->'}
+          fontColor = {'<-Hex code of required color->'} 
+          windowHeight = {'<-preferable window height || -defaults to the required height>'} 
+          windowWidth = {'<-preferable window width || -defaults to 100% width of the parent container>''} />
+
+---
+
+    <MetypeFeedWidget
+          host={'<-hostname->'}
+          accountId={<-account id->}
+          primaryColor={'<-Hex code of required color->'}
+          className = {'<-class name for styling->}
+          secondaryColor = {'<-Hex code of required color->'}
+          fontColor = {'<-Hex code of required color->'}        
+          publisher={'<-publisher name->'} />
+
 
 ## Installation
 
 
-> ```javascript 
-npm i @metype/components --save```
+
+> `npm i @metype/components --save`
 
 
 ### Usage
 
-> ```javascript
-import { MetypeFeedWidget } from "@metype/components";
-```
+> `import { MetypeFeedWidget } from "@metype/components";`
 
-> ```javascript
-import { MetypeWidget } from "@metype/components";
-```
+> `import { MetypeWidget } from "@metype/components";`
 
 ### Support
 
