@@ -21,8 +21,8 @@
           className = {'<-class name for styling->}
           secondaryColor = {'<-Hex code of required color->'}
           fontColor = {'<-Hex code of required color->'} 
-          windowHeight = {'<-preferable window height || -defaults to the required height>'} 
-          windowWidth = {'<-preferable window width || -defaults to 100% width of the parent container>''} />
+          windowHeight = {'<-preferable window height || defaults to the required height>'} 
+          windowWidth = {'<-preferable window width || defaults to 100% width of the parent container>''} />
 
 ---
 
