@@ -10,7 +10,21 @@
  
 >* Metype-Feed-widget [ *realtime feed of all the comments on the site* ]
 
-## Code Samples
+
+## Installation
+
+
+
+> `npm i @metype/components --save`
+
+
+### Usage
+
+> `import { MetypeFeedWidget } from "@metype/components";`
+
+> `import { MetypeWidget } from "@metype/components";`
+
+### Code Samples
 
 
     <MetypeWidget
@@ -35,19 +49,6 @@
           fontColor = {'<-Hex code of required color->'}        
           publisher={'<-publisher name->'} />
 
-
-## Installation
-
-
-
-> `npm i @metype/components --save`
-
-
-### Usage
-
-> `import { MetypeFeedWidget } from "@metype/components";`
-
-> `import { MetypeWidget } from "@metype/components";`
 
 ### Support
 
