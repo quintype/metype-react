@@ -1,7 +1,7 @@
 import React from "react";
 import {scriptLoader} from "./metype-script-loader";
 
-class MetypeWidget extends React.Component {
+class MetypeCommentingWidget extends React.Component {
 
   constructor(props) {
     super(props);
@@ -47,4 +47,4 @@ class MetypeWidget extends React.Component {
   }
 }
 
-export {MetypeWidget};
+export {MetypeCommentingWidget};

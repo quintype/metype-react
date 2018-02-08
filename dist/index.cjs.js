@@ -157,19 +157,19 @@ var MetypeFeedWidget = function (_React$Component) {
   return MetypeFeedWidget;
 }(React.Component);
 
-var MetypeWidget = function (_React$Component) {
-  inherits(MetypeWidget, _React$Component);
+var MetypeCommentingWidget = function (_React$Component) {
+  inherits(MetypeCommentingWidget, _React$Component);
 
-  function MetypeWidget(props) {
-    classCallCheck(this, MetypeWidget);
+  function MetypeCommentingWidget(props) {
+    classCallCheck(this, MetypeCommentingWidget);
 
-    var _this = possibleConstructorReturn(this, (MetypeWidget.__proto__ || Object.getPrototypeOf(MetypeWidget)).call(this, props));
+    var _this = possibleConstructorReturn(this, (MetypeCommentingWidget.__proto__ || Object.getPrototypeOf(MetypeCommentingWidget)).call(this, props));
 
     _this.randomNumber = new Date().getMilliseconds();
     return _this;
   }
 
-  createClass(MetypeWidget, [{
+  createClass(MetypeCommentingWidget, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -233,9 +233,61 @@ var MetypeWidget = function (_React$Component) {
       );
     }
   }]);
-  return MetypeWidget;
+  return MetypeCommentingWidget;
+}(React.Component);
+
+var MetypeContributionWidget = function (_React$Component) {
+  inherits(MetypeContributionWidget, _React$Component);
+
+  function MetypeContributionWidget(props) {
+    classCallCheck(this, MetypeContributionWidget);
+
+    var _this = possibleConstructorReturn(this, (MetypeContributionWidget.__proto__ || Object.getPrototypeOf(MetypeContributionWidget)).call(this, props));
+
+    _this.randomNumber = new Date().getMilliseconds();
+    return _this;
+  }
+
+  createClass(MetypeContributionWidget, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      !window.talktype && scriptLoader(this.props.host, function () {
+        return _this2.initWidget(_this2.randomNumber);
+      });
+      this.initWidget(this.randomNumber);
+    }
+  }, {
+    key: "initWidget",
+    value: function initWidget(randomNumber) {
+      if (window.talktype) {
+        window.talktype.contributionWidgetIframe(document.getElementById("metype-contribution-" + randomNumber));
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          host = _props.host,
+          accountId = _props.accountId,
+          publisher = _props.publisher;
+
+
+      return React.createElement(
+        "div",
+        null,
+        React.createElement("div", { id: "metype-contribution-" + this.randomNumber,
+          "data-metype-account-id": accountId,
+          "data-metype-host": host,
+          "data-metype-publisher": publisher })
+      );
+    }
+  }]);
+  return MetypeContributionWidget;
 }(React.Component);
 
 exports.MetypeFeedWidget = MetypeFeedWidget;
-exports.MetypeWidget = MetypeWidget;
+exports.MetypeCommentingWidget = MetypeCommentingWidget;
 exports.scriptLoader = scriptLoader;
+exports.MetypeContributionWidget = MetypeContributionWidget;
