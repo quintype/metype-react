@@ -24,14 +24,14 @@
 
 > `import { MetypeFeedWidget } from "@metype/components";`
 
-> `import { MetypeWidget } from "@metype/components";`
+> `import { MetypeCommentingWidget } from "@metype/components";`
 
 > `import { MetypeContributionWidget } from "@metype/components";`
 
 ### Code Samples
 
 
-    <MetypeWidget
+    <MetypeCommentingWidget
           host={'<-hostname->'}
           accountId={<-account id->}
           pageURL={'<-url of current page->'}
