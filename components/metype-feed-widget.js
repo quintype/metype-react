@@ -38,7 +38,7 @@ class MetypeFeedWidget extends React.Component {
                 data-metype-bg-color={secondaryColor || '#fff'}
                 data-metype-font-color={fontColor || '#4a4a4a'} >
       <div id='metype-clickthru' className='metype-clickthru' onClick={() => this.metypeToggleButton()}></div>
-      <div className="metype-feed-slide-icon" id="metype-feed-slide-icon" onClick={() => this.metypeToggleButton()}></div>
+      <div className="metype-feed-slide-icon" id="metype-feed-slide-icon" onClick={() => this.metypeSlideToggleButton()}></div>
     </div>
   }
 }

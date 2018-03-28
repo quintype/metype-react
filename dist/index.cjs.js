@@ -149,7 +149,7 @@ var MetypeFeedWidget = function (_React$Component) {
             return _this3.metypeToggleButton();
           } }),
         React.createElement("div", { className: "metype-feed-slide-icon", id: "metype-feed-slide-icon", onClick: function onClick() {
-            return _this3.metypeToggleButton();
+            return _this3.metypeSlideToggleButton();
           } })
       );
     }
