@@ -94,11 +94,20 @@ var MetypeFeedWidget = function (_React$Component) {
   createClass(MetypeFeedWidget, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.checkFeed();
+    }
+  }, {
+    key: "checkFeed",
+    value: function checkFeed() {
       var _this2 = this;
 
-      !window.talktype && scriptLoader(this.props.host, function () {
-        return _this2.initFeed(_this2.randomNumber);
-      });
+      if (window.talktype) {
+        this.initFeed(this.randomNumber);
+      } else {
+        scriptLoader(this.props.host, function () {
+          return _this2.initFeed(_this2.randomNumber);
+        });
+      }
     }
   }, {
     key: "initFeed",
@@ -172,12 +181,20 @@ var MetypeCommentingWidget = function (_React$Component) {
   createClass(MetypeCommentingWidget, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.checkScript();
+    }
+  }, {
+    key: "checkScript",
+    value: function checkScript() {
       var _this2 = this;
 
-      !window.talktype && scriptLoader(this.props.host, function () {
-        return _this2.initWidget(_this2.randomNumber);
-      });
-      this.initWidget(this.randomNumber);
+      if (window.talktype) {
+        this.initWidget(this.randomNumber);
+      } else {
+        scriptLoader(this.props.host, function () {
+          return _this2.initWidget(_this2.randomNumber);
+        });
+      }
     }
   }, {
     key: "metypeToggleButton",
@@ -287,7 +304,67 @@ var MetypeContributionWidget = function (_React$Component) {
   return MetypeContributionWidget;
 }(React.Component);
 
+var MetypeStoryReactions = function (_React$Component) {
+  inherits(MetypeStoryReactions, _React$Component);
+
+  function MetypeStoryReactions() {
+    classCallCheck(this, MetypeStoryReactions);
+    return possibleConstructorReturn(this, (MetypeStoryReactions.__proto__ || Object.getPrototypeOf(MetypeStoryReactions)).apply(this, arguments));
+  }
+
+  createClass(MetypeStoryReactions, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.checkScriptLoad();
+    }
+  }, {
+    key: "checkScriptLoad",
+    value: function checkScriptLoad() {
+      var _this2 = this;
+
+      if (window.talktype) {
+        this.initReactionsScript();
+      } else {
+        scriptLoader(this.props.host, function () {
+          return _this2.initReactionsScript();
+        });
+      }
+    }
+  }, {
+    key: "initReactionsScript",
+    value: function initReactionsScript() {
+      var _this3 = this;
+
+      window.talktype && window.talktype(function () {
+        talktype.pageReactionsIframe(_this3.metypeReactionsContainer);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      var _props = this.props,
+          accountId = _props.accountId,
+          _props$host = _props.host,
+          host = _props$host === undefined ? "https://www.metype.com" : _props$host,
+          _props$pageUrl = _props.pageUrl,
+          pageUrl = _props$pageUrl === undefined ? window && window.location ? window.location.href : '' : _props$pageUrl;
+
+      return React.createElement("div", { id: "metype-page-reactions-container",
+        ref: function ref(el) {
+          return _this4.metypeReactionsContainer = el;
+        },
+        "data-metype-account-id": accountId,
+        "data-metype-host": host,
+        "data-metype-page-url": pageUrl });
+    }
+  }]);
+  return MetypeStoryReactions;
+}(React.Component);
+
 exports.MetypeFeedWidget = MetypeFeedWidget;
 exports.MetypeCommentingWidget = MetypeCommentingWidget;
 exports.scriptLoader = scriptLoader;
 exports.MetypeContributionWidget = MetypeContributionWidget;
+exports.MetypeStoryReactions = MetypeStoryReactions;
