@@ -23,7 +23,7 @@ class MetypeStoryReactions extends React.Component {
   }
 
   render() {
-    const { accountId = 2,
+    const { accountId,
       host = "https://www.metype.com",
       pageUrl = (window && window.location) ? window.location.href : '' } = this.props;
     return <div id="metype-page-reactions-container"
