@@ -9,8 +9,15 @@ class MetypeCommentingWidget extends React.Component {
   }
 
   componentDidMount() {
-    !window.talktype && scriptLoader(this.props.host, () => this.initWidget(this.randomNumber));
-    this.initWidget(this.randomNumber);
+    this.checkScript();
+  }
+
+  checkScript() {
+    if(window.talktype) {
+      this.initWidget(this.randomNumber);
+    } else {
+      scriptLoader(this.props.host, () => this.initWidget(this.randomNumber));
+    }
   }
 
   metypeToggleButton(){
