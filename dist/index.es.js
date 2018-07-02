@@ -327,27 +327,23 @@ var MetypeStoryReactions = function (_React$Component) {
   }, {
     key: "initReactionsScript",
     value: function initReactionsScript() {
-      var _this3 = this;
-
-      window.talktype && window.talktype(function () {
-        talktype.pageReactionsIframe(_this3.metypeReactionsContainer);
-      });
+      window.talktype && window.talktype.pageReactionsIframe(this.metypeReactionsContainer);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       var _props = this.props,
           accountId = _props.accountId,
           _props$host = _props.host,
           host = _props$host === undefined ? "https://www.metype.com" : _props$host,
           _props$pageUrl = _props.pageUrl,
-          pageUrl = _props$pageUrl === undefined ? window && window.location ? window.location.href : '' : _props$pageUrl;
+          pageUrl = _props$pageUrl === undefined ? global && global.location ? global.location.href : '' : _props$pageUrl;
 
       return React.createElement("div", { id: "metype-page-reactions-container",
         ref: function ref(el) {
-          return _this4.metypeReactionsContainer = el;
+          return _this3.metypeReactionsContainer = el;
         },
         "data-metype-account-id": accountId,
         "data-metype-host": host,

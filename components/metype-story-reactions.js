@@ -17,15 +17,13 @@ class MetypeStoryReactions extends React.Component {
   }
 
   initReactionsScript() {
-    window.talktype && window.talktype(() =>  {
-      talktype.pageReactionsIframe(this.metypeReactionsContainer);
-    });
+    window.talktype && window.talktype.pageReactionsIframe(this.metypeReactionsContainer);
   }
 
   render() {
     const { accountId,
       host = "https://www.metype.com",
-      pageUrl = (window && window.location) ? window.location.href : '' } = this.props;
+      pageUrl = (global && global.location) ? global.location.href : '' } = this.props;
     return <div id="metype-page-reactions-container"
                 ref={(el) => this.metypeReactionsContainer = el }
                 data-metype-account-id={accountId}
