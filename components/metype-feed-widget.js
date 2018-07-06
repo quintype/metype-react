@@ -8,7 +8,15 @@ class MetypeFeedWidget extends React.Component {
   }
 
   componentDidMount(){
-    !window.talktype && scriptLoader(this.props.host,  () => this.initFeed(this.randomNumber));
+    this.checkFeed();
+  }
+
+  checkFeed() {
+    if(window.talktype) {
+      this.initFeed(this.randomNumber)
+    }else {
+      scriptLoader(this.props.host,  () => this.initFeed(this.randomNumber));
+    }
   }
 
   initFeed(randomNumber){

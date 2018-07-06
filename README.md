@@ -12,6 +12,8 @@
 
 >* Metype-Contribution-Widget [ *submit content to the system* ]
 
+>* Metype-Story-Reactions [ *add reactions to stories* ]
+
 
 ## Installation
 
@@ -27,6 +29,8 @@
 > `import { MetypeCommentingWidget } from "@metype/components";`
 
 > `import { MetypeContributionWidget } from "@metype/components";`
+
+> `import { MetypeStoryReactions } from "@metype/components";`
 
 ### Code Samples
 
@@ -57,6 +61,13 @@
           host={'<-hostname->'}
           accountId={<-account id->}      
           publisher={'<-publisher name->'} />
+
+---
+    <MetypeStoryReactions
+          host={'<-hostname->'}
+          accountId={<-account id->}      
+          pageUrl={'<-url of current page->'} />
+---
 
 
 ### Support
