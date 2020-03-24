@@ -23,7 +23,7 @@ class MetypeCommentingWidget extends React.Component {
 
   initWidget(randomNumber){
     if (window.talktype) {
-      window.talktype.accountUserLogin({
+      this.props.jwt && window.talktype.accountUserLogin({
         jwt: this.props.jwt
       });
       window.talktype.commentWidgetIframe(document.getElementById(`metype-container-${randomNumber}`));
