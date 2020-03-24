@@ -186,7 +186,6 @@ var MetypeCommentingWidget = function (_React$Component) {
   }, {
     key: "initWidget",
     value: function initWidget(randomNumber) {
-      console.log('inside init widget--', this.props, window.talktype);
       if (window.talktype) {
         this.props.jwt && window.talktype.accountUserLogin({
           jwt: this.props.jwt

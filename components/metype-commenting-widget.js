@@ -22,7 +22,6 @@ class MetypeCommentingWidget extends React.Component {
   }
 
   initWidget(randomNumber){
-    console.log('inside init widget--', this.props, window.talktype)
     if (window.talktype) {
       this.props.jwt && window.talktype.accountUserLogin({
         jwt: this.props.jwt
