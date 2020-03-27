@@ -87,6 +87,10 @@
       jwt: this.props.jwt
     });
 
+Note: The iframe is rerendered based on the jwtToken.
+
+TODO: To be made more scalable and performant.
+
 
 
 ### Support
