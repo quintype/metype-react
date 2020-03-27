@@ -193,6 +193,9 @@ var MetypeCommentingWidget = function (_React$Component) {
     key: "initWidget",
     value: function initWidget(randomNumber) {
       if (window.talktype) {
+        this.props.jwt && window.talktype.accountUserLogin({
+          jwt: this.props.jwt
+        });
         window.talktype.commentWidgetIframe(document.getElementById("metype-container-" + randomNumber));
       }
     }
@@ -212,7 +215,6 @@ var MetypeCommentingWidget = function (_React$Component) {
           pageURL = _props.pageURL,
           windowHeight = _props.windowHeight,
           windowWidth = _props.windowWidth;
-
 
       return React.createElement(
         "div",

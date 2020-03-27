@@ -59,6 +59,40 @@
           publisher={'<-publisher name->'} />
 
 
+### Support for third party login
+
+> Prerequisites:
+
+>* Login to be implemented in the parent app where metype is embedded.
+>* Enable third party login in the metype dashboard settings.
+
+### Usage
+
+>* Generate the jwtToken after login and pass it as a prop to the `MetypeCommentingWidget` as a string.
+
+### Code Samples
+
+
+    <MetypeCommentingWidget
+          host={'<-hostname->'}
+          accountId={<-account id->}
+          pageURL={'<-url of current page->'}
+          .....
+          jwt={jwt} />
+          
+          
+>* To login the user we call the below function with jwt being passed
+
+    this.props.jwt && window.talktype.accountUserLogin({
+      jwt: this.props.jwt
+    });
+
+Note: The iframe is rerendered based on the jwtToken.
+
+TODO: To be made more scalable and performant.
+
+
+
 ### Support
 
 
