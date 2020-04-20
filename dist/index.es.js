@@ -303,15 +303,11 @@ var MetypeReactionsWidget = function MetypeReactionsWidget(props) {
     }
   };
 
-  return React.createElement(
-    "div",
-    {
-      id: "metype-page-reactions-container-" + storyId,
-      "data-metype-account-id": accountId,
-      "data-metype-host": host,
-      "data-metype-page-url": storyUrl },
-    ">"
-  );
+  return React.createElement("div", {
+    id: "metype-page-reactions-container-" + storyId,
+    "data-metype-account-id": accountId,
+    "data-metype-host": host,
+    "data-metype-page-url": storyUrl });
 };
 
 export { MetypeFeedWidget, MetypeCommentingWidget, scriptLoader, MetypeContributionWidget, MetypeReactionsWidget };
