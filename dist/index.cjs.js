@@ -4,7 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
+var React = require('react');
+var React__default = _interopDefault(React);
 
 var scriptLoader = function scriptLoader(host, callback) {
   var metypeScript = document.createElement('script');
@@ -132,7 +133,7 @@ var MetypeFeedWidget = function (_React$Component) {
           fontColor = _props.fontColor;
 
 
-      return React.createElement(
+      return React__default.createElement(
         "div",
         { id: "feed-metype-container",
           ref: function ref(el) {
@@ -145,17 +146,17 @@ var MetypeFeedWidget = function (_React$Component) {
           "data-metype-primary-color": primaryColor || '#3a9fdd',
           "data-metype-bg-color": secondaryColor || '#fff',
           "data-metype-font-color": fontColor || '#4a4a4a' },
-        React.createElement("div", { id: "metype-clickthru", className: "metype-clickthru", onClick: function onClick() {
+        React__default.createElement("div", { id: "metype-clickthru", className: "metype-clickthru", onClick: function onClick() {
             return _this3.metypeToggleButton();
           } }),
-        React.createElement("div", { className: "metype-feed-slide-icon", id: "metype-feed-slide-icon", onClick: function onClick() {
+        React__default.createElement("div", { className: "metype-feed-slide-icon", id: "metype-feed-slide-icon", onClick: function onClick() {
             return _this3.metypeSlideToggleButton();
           } })
       );
     }
   }]);
   return MetypeFeedWidget;
-}(React.Component);
+}(React__default.Component);
 
 var MetypeCommentingWidget = function (_React$Component) {
   inherits(MetypeCommentingWidget, _React$Component);
@@ -216,10 +217,10 @@ var MetypeCommentingWidget = function (_React$Component) {
           windowHeight = _props.windowHeight,
           windowWidth = _props.windowWidth;
 
-      return React.createElement(
+      return React__default.createElement(
         "div",
         null,
-        React.createElement("div", { id: "metype-container-" + this.randomNumber,
+        React__default.createElement("div", { id: "metype-container-" + this.randomNumber,
           ref: function ref(el) {
             return _this3.metypeWidget = el;
           },
@@ -236,7 +237,7 @@ var MetypeCommentingWidget = function (_React$Component) {
     }
   }]);
   return MetypeCommentingWidget;
-}(React.Component);
+}(React__default.Component);
 
 var MetypeContributionWidget = function (_React$Component) {
   inherits(MetypeContributionWidget, _React$Component);
@@ -276,10 +277,10 @@ var MetypeContributionWidget = function (_React$Component) {
           publisher = _props.publisher;
 
 
-      return React.createElement(
+      return React__default.createElement(
         "div",
         null,
-        React.createElement("div", { id: "metype-contribution-" + this.randomNumber,
+        React__default.createElement("div", { id: "metype-contribution-" + this.randomNumber,
           "data-metype-account-id": accountId,
           "data-metype-host": host,
           "data-metype-publisher": publisher })
@@ -287,9 +288,41 @@ var MetypeContributionWidget = function (_React$Component) {
     }
   }]);
   return MetypeContributionWidget;
-}(React.Component);
+}(React__default.Component);
+
+var MetypeReactionsWidget = function MetypeReactionsWidget(props) {
+  var accountId = props.accountId,
+      host = props.host,
+      storyUrl = props.storyUrl,
+      storyId = props.storyId;
+
+
+  React.useEffect(function () {
+    !window.talktype && scriptLoader(host, function () {
+      return initPageReactions(storyId);
+    });
+    initPageReactions(storyId);
+  }, []);
+
+  var initPageReactions = function initPageReactions() {
+    if (window.talktype) {
+      window.talktype.pageReactionsIframe(document.getElementById("metype-page-reactions-container-" + storyId));
+    }
+  };
+
+  return React__default.createElement(
+    "div",
+    {
+      id: "metype-page-reactions-container-" + storyId,
+      "data-metype-account-id": accountId,
+      "data-metype-host": host,
+      "data-metype-page-url": storyUrl },
+    ">"
+  );
+};
 
 exports.MetypeFeedWidget = MetypeFeedWidget;
 exports.MetypeCommentingWidget = MetypeCommentingWidget;
 exports.scriptLoader = scriptLoader;
 exports.MetypeContributionWidget = MetypeContributionWidget;
+exports.MetypeReactionsWidget = MetypeReactionsWidget;

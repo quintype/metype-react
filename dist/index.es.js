@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 var scriptLoader = function scriptLoader(host, callback) {
   var metypeScript = document.createElement('script');
@@ -283,4 +283,35 @@ var MetypeContributionWidget = function (_React$Component) {
   return MetypeContributionWidget;
 }(React.Component);
 
-export { MetypeFeedWidget, MetypeCommentingWidget, scriptLoader, MetypeContributionWidget };
+var MetypeReactionsWidget = function MetypeReactionsWidget(props) {
+  var accountId = props.accountId,
+      host = props.host,
+      storyUrl = props.storyUrl,
+      storyId = props.storyId;
+
+
+  useEffect(function () {
+    !window.talktype && scriptLoader(host, function () {
+      return initPageReactions(storyId);
+    });
+    initPageReactions(storyId);
+  }, []);
+
+  var initPageReactions = function initPageReactions() {
+    if (window.talktype) {
+      window.talktype.pageReactionsIframe(document.getElementById("metype-page-reactions-container-" + storyId));
+    }
+  };
+
+  return React.createElement(
+    "div",
+    {
+      id: "metype-page-reactions-container-" + storyId,
+      "data-metype-account-id": accountId,
+      "data-metype-host": host,
+      "data-metype-page-url": storyUrl },
+    ">"
+  );
+};
+
+export { MetypeFeedWidget, MetypeCommentingWidget, scriptLoader, MetypeContributionWidget, MetypeReactionsWidget };
