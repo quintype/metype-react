@@ -28,7 +28,7 @@ const MetypeReactionsWidget = (props) => {
       data-metype-account-id={accountId}
       data-metype-host={host}
       data-metype-page-url={storyUrl}>
-    ></div>
+    </div>
   );
 }
 
