@@ -12,6 +12,8 @@
 
 >* Metype-Contribution-Widget [ *submit content to the system* ]
 
+>* Metype-Reactions-Widget [ *Add reactions to a realm to keep the users engaged* ]
+
 
 ## Installation
 
@@ -27,6 +29,8 @@
 > `import { MetypeCommentingWidget } from "@metype/components";`
 
 > `import { MetypeContributionWidget } from "@metype/components";`
+
+> `import { MetypeReactionsWidget } from "@metype/components";`
 
 ### Code Samples
 
