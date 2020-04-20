@@ -57,6 +57,12 @@
           host={'<-hostname->'}
           accountId={<-account id->}      
           publisher={'<-publisher name->'} />
+---
+    <MetypeReactionsWidget
+          host={'<-hostname->'}
+          accountId={<-account id->}
+          storyUrl={'<-story realm url->'}
+          storyId={'<-story realm id->} />
 
 
 ### Support for third party login

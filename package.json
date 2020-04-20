@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/quintype/metype-react#readme",
   "dependencies": {
-    "react": "^16.2.0"
+    "react": "^16.11.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
