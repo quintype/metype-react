@@ -130,7 +130,9 @@ var MetypeFeedWidget = function (_React$Component) {
           accountId = _props.accountId,
           className = _props.className,
           secondaryColor = _props.secondaryColor,
-          fontColor = _props.fontColor;
+          fontColor = _props.fontColor,
+          fontFamily = _props.fontFamily,
+          fontUrl = _props.fontUrl;
 
 
       return React__default.createElement(
@@ -145,7 +147,9 @@ var MetypeFeedWidget = function (_React$Component) {
           "data-metype-publisher": publisher,
           "data-metype-primary-color": primaryColor || '#3a9fdd',
           "data-metype-bg-color": secondaryColor || '#fff',
-          "data-metype-font-color": fontColor || '#4a4a4a' },
+          "data-metype-font-color": fontColor || '#4a4a4a',
+          "data-metype-font-url": fontUrl || "",
+          "data-metype-font-family": fontFamily || "" },
         React__default.createElement("div", { id: "metype-clickthru", className: "metype-clickthru", onClick: function onClick() {
             return _this3.metypeToggleButton();
           } }),
@@ -215,7 +219,9 @@ var MetypeCommentingWidget = function (_React$Component) {
           fontColor = _props.fontColor,
           pageURL = _props.pageURL,
           windowHeight = _props.windowHeight,
-          windowWidth = _props.windowWidth;
+          windowWidth = _props.windowWidth,
+          fontUrl = _props.fontUrl,
+          fontFamily = _props.fontFamily;
 
       return React__default.createElement(
         "div",
@@ -232,7 +238,9 @@ var MetypeCommentingWidget = function (_React$Component) {
           "data-metype-font-color": fontColor || '#4a4a4a',
           "data-metype-window-width": windowWidth || (!global ? window.screen.width : 700),
           "data-metype-window-height": windowHeight || (!global ? window.screen.height : 700),
-          "data-metype-page-url": pageURL })
+          "data-metype-page-url": pageURL,
+          "data-metype-font-url": fontUrl || "",
+          "data-metype-font-family": fontFamily || "" })
       );
     }
   }]);
@@ -274,7 +282,9 @@ var MetypeContributionWidget = function (_React$Component) {
       var _props = this.props,
           host = _props.host,
           accountId = _props.accountId,
-          publisher = _props.publisher;
+          publisher = _props.publisher,
+          fontFamily = _props.fontFamily,
+          fontUrl = _props.fontUrl;
 
 
       return React__default.createElement(
@@ -283,7 +293,9 @@ var MetypeContributionWidget = function (_React$Component) {
         React__default.createElement("div", { id: "metype-contribution-" + this.randomNumber,
           "data-metype-account-id": accountId,
           "data-metype-host": host,
-          "data-metype-publisher": publisher })
+          "data-metype-publisher": publisher,
+          "data-metype-font-url": fontUrl || "",
+          "data-metype-font-family": fontFamily || "" })
       );
     }
   }]);
@@ -294,7 +306,9 @@ var MetypeReactionsWidget = function MetypeReactionsWidget(props) {
   var accountId = props.accountId,
       host = props.host,
       storyUrl = props.storyUrl,
-      storyId = props.storyId;
+      storyId = props.storyId,
+      fontUrl = props.fontUrl,
+      fontFamily = props.fontFamily;
 
 
   React.useEffect(function () {
@@ -314,7 +328,9 @@ var MetypeReactionsWidget = function MetypeReactionsWidget(props) {
     id: "metype-page-reactions-container-" + storyId,
     "data-metype-account-id": accountId,
     "data-metype-host": host,
-    "data-metype-page-url": storyUrl });
+    "data-metype-page-url": storyUrl,
+    "data-metype-font-url": fontUrl || "",
+    "data-metype-font-family": fontFamily || "" });
 };
 
 exports.MetypeFeedWidget = MetypeFeedWidget;

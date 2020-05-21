@@ -44,7 +44,9 @@
           secondaryColor = {'<-Hex code of required color->'}
           fontColor = {'<-Hex code of required color->'} 
           windowHeight = {'<-preferable window height || defaults to the required height>'} 
-          windowWidth = {'<-preferable window width || defaults to 100% width of the parent container>''} />
+          windowWidth = {'<-preferable window width || defaults to 100% width of the parent container>''}
+          fontFamily={'<-font family name for the widget->'}
+          fontUrl={'<-font family url for the widget->'} />
 
 ---
 
@@ -55,18 +57,24 @@
           className = {'<-class name for styling->}
           secondaryColor = {'<-Hex code of required color->'}
           fontColor = {'<-Hex code of required color->'}        
-          publisher={'<-publisher name->'} />       
+          publisher={'<-publisher name->'}
+          fontFamily={'<-font family name for the widget->'}
+          fontUrl={'<-font family url for the widget->'} />       
 ---
     <MetypeContributionWidget
           host={'<-hostname->'}
           accountId={<-account id->}      
-          publisher={'<-publisher name->'} />
+          publisher={'<-publisher name->'}
+          fontFamily={'<-font family name for the widget->'}
+          fontUrl={'<-font family url for the widget->'} />
 ---
     <MetypeReactionsWidget
           host={'<-hostname->'}
           accountId={<-account id->}
           storyUrl={'<-story realm url->'}
-          storyId={'<-story realm id->} />
+          storyId={'<-story realm id->}
+          fontFamily={'<-font family name for the widget->'}
+          fontUrl={'<-font family url for the widget->'} />
 
 
 ### Support for third party login

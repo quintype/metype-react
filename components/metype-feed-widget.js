@@ -26,7 +26,7 @@ class MetypeFeedWidget extends React.Component {
   }
 
   render() {
-    const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor} = this.props;
+    const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor, fontFamily, fontUrl} = this.props;
 
     return <div id="feed-metype-container"
                 ref={(el) => this.metypeFeedWidget = el }
@@ -36,7 +36,9 @@ class MetypeFeedWidget extends React.Component {
                 data-metype-publisher={publisher}
                 data-metype-primary-color={primaryColor || '#3a9fdd'}
                 data-metype-bg-color={secondaryColor || '#fff'}
-                data-metype-font-color={fontColor || '#4a4a4a'} >
+                data-metype-font-color={fontColor || '#4a4a4a'}
+                data-metype-font-url={fontUrl || ""}
+                data-metype-font-family={fontFamily || ""}>
       <div id='metype-clickthru' className='metype-clickthru' onClick={() => this.metypeToggleButton()}></div>
       <div className="metype-feed-slide-icon" id="metype-feed-slide-icon" onClick={() => this.metypeSlideToggleButton()}></div>
     </div>

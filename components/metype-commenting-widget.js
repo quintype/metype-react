@@ -31,7 +31,7 @@ class MetypeCommentingWidget extends React.Component {
   }
 
   render() {
-    const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor, pageURL, windowHeight, windowWidth} = this.props;
+    const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor, pageURL, windowHeight, windowWidth, fontUrl, fontFamily} = this.props;
     return <div>
       <div id={`metype-container-${this.randomNumber}`}
            ref={(el) => this.metypeWidget = el }
@@ -43,7 +43,9 @@ class MetypeCommentingWidget extends React.Component {
            data-metype-font-color={fontColor || '#4a4a4a'}
            data-metype-window-width={windowWidth || (!global ? window.screen.width : 700)}
            data-metype-window-height={windowHeight || (!global ? window.screen.height : 700)}
-           data-metype-page-url={pageURL}>
+           data-metype-page-url={pageURL}
+           data-metype-font-url={fontUrl || ""}
+           data-metype-font-family={fontFamily || ""}>
       </div>
     </div>
   }

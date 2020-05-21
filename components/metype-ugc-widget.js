@@ -20,13 +20,15 @@ class MetypeContributionWidget extends React.Component {
   }
 
   render() {
-    const {host, accountId, publisher} = this.props;
+    const {host, accountId, publisher, fontFamily, fontUrl} = this.props;
 
     return <div>
       <div id={`metype-contribution-${this.randomNumber}`}
            data-metype-account-id={accountId}
            data-metype-host={host}
-           data-metype-publisher={publisher}>
+           data-metype-publisher={publisher}
+           data-metype-font-url={fontUrl || ""}
+           data-metype-font-family={fontFamily || ""}>
       </div>
     </div>
   }
