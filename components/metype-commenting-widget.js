@@ -26,6 +26,7 @@ class MetypeCommentingWidget extends React.Component {
       this.props.jwt && window.talktype.accountUserLogin({
         jwt: this.props.jwt
       });
+      console.log(this.props, this.props.pageUrl)
       window.talktype.pageMetadataSetter(this.props.accountId, this.props.pageUrl, { section: ["science", "tech"], author_ids: ["123"] });
       window.talktype.commentWidgetIframe(document.getElementById(`metype-container-${randomNumber}`));
     }
