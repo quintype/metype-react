@@ -1,6 +1,6 @@
 {
   "name": "@metype/components",
-  "version": "2.3.3-beta.0",
+  "version": "2.3.3-beta.1",
   "description": "React wrapped component built around metype",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -35,7 +35,6 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "prepack": "npm run build",
-    "prepublishOnly": "npm install && git diff --quiet && git tag v$(cat package.json | grep version | head -n1  | cut -d \\\" -f 4) && git push --tags origin master"
+    "prepack": "npm run build"
   }
 }
