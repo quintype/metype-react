@@ -1,6 +1,6 @@
 {
   "name": "@metype/components",
-  "version": "2.3.3-beta.3",
+  "version": "2.3.3-beta.4",
   "description": "React wrapped component built around metype",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
