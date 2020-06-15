@@ -194,7 +194,7 @@ var MetypeCommentingWidget = function (_React$Component) {
         this.props.jwt && window.talktype.accountUserLogin({
           jwt: this.props.jwt
         });
-        window.talktype.pageMetadataSetter(this.props.accountId, this.props.pageURL, { section: ["science", "tech"], author_ids: ["123"] });
+        window.talktype.pageMetadataSetter(this.props.accountId, this.props.pageURL, { section: ["science", "tech"], author_ids: ["123"] }, this.props.host);
         window.talktype.commentWidgetIframe(document.getElementById("metype-container-" + randomNumber));
       }
     }
