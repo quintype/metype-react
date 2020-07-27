@@ -191,9 +191,14 @@ var MetypeCommentingWidget = function (_React$Component) {
     key: "initWidget",
     value: function initWidget(randomNumber) {
       if (window.talktype) {
-        this.props.jwt && window.talktype.accountUserLogin({
-          jwt: this.props.jwt
-        });
+        console.log('inside this here');
+        if (this.props.message) {
+          window.talktype.accountUserLogout();
+        } else {
+          this.props.jwt && window.talktype.accountUserLogin({
+            jwt: this.props.jwt
+          });
+        }
         window.talktype.pageMetadataSetter(this.props.accountId, this.props.pageURL, { "section": ["cooking1", "tech1"], "author_ids": [1000] }, this.props.host);
         window.talktype.commentWidgetIframe(document.getElementById("metype-container-" + randomNumber));
       }
