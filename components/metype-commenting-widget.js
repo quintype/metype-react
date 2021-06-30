@@ -6,11 +6,12 @@ class MetypeCommentingWidget extends React.Component {
   constructor(props) {
     super(props);
     this.randomNumber = new Date().getMilliseconds();
+    this.metypeWidget = React.createRef();
   }
 
   componentDidMount() {
-    !window.talktype && scriptLoader(this.props.host, () => this.initWidget(this.randomNumber));
-    this.initWidget(this.randomNumber);
+    !window.talktype && scriptLoader(this.props.host, () => this.initWidget());
+    this.initWidget();
   }
 
   metypeToggleButton(){
@@ -21,12 +22,12 @@ class MetypeCommentingWidget extends React.Component {
     (!global && window.talktype) && window.talktype.slideButton();
   }
 
-  initWidget(randomNumber){
+  initWidget(){
     if (window.talktype) {
       this.props.jwt && window.talktype.accountUserLogin({
         jwt: this.props.jwt
       });
-      window.talktype.commentWidgetIframe(document.getElementById(`metype-container-${randomNumber}`));
+      window.talktype.commentWidgetIframe(this.metypeWidge);
     }
   }
 
@@ -34,7 +35,7 @@ class MetypeCommentingWidget extends React.Component {
     const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor, pageURL, windowHeight, windowWidth, fontUrl, fontFamily} = this.props;
     return <div>
       <div id={`metype-container-${this.randomNumber}`}
-           ref={(el) => this.metypeWidget = el }
+           ref={el => this.metypeWidge = el}
            className={`iframe-container ${className}`}
            data-metype-account-id={accountId}
            data-metype-host={host} //Change fallback to deployed domain name
