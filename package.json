@@ -8,6 +8,11 @@
     "type": "git",
     "url": "git+https://github.com/quintype/metype-react.git"
   },
+  "scripts": {
+    "build": "rollup -c",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm install && ./bin-dev-scripts/standard-version-release.sh"
+  },
   "keywords": [
     "quintype",
     "metype",
@@ -33,10 +38,5 @@
   },
   "peerDependencies": {
     "react": "^16.1.0"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "prepack": "npm run build",
-    "prepublishOnly": "npm install && npm test && ./bin-dev-scripts/standard-version-release.sh"
   }
 }
