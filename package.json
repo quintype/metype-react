@@ -1,12 +1,17 @@
 {
   "name": "@metype/components",
-  "version": "2.3.3",
+  "version": "2.3.4-metype-commenting-widget-fix.2",
   "description": "React wrapped component built around metype",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/quintype/metype-react.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm install && ./bin-dev-scripts/standard-version-release.sh"
   },
   "keywords": [
     "quintype",
@@ -28,14 +33,10 @@
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-react": "^6.24.1",
     "rollup": "^0.52.3",
-    "rollup-plugin-babel": "^3.0.2"
+    "rollup-plugin-babel": "^3.0.2",
+    "standard-version": "^9.3.0"
   },
   "peerDependencies": {
     "react": "^16.1.0"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "prepack": "npm run build",
-    "prepublishOnly": "npm install && git diff --quiet && git tag v$(cat package.json | grep version | head -n1  | cut -d \\\" -f 4) && git push --tags origin master"
   }
 }
