@@ -171,6 +171,7 @@ var MetypeCommentingWidget = function (_React$Component) {
     var _this = possibleConstructorReturn(this, (MetypeCommentingWidget.__proto__ || Object.getPrototypeOf(MetypeCommentingWidget)).call(this, props));
 
     _this.randomNumber = new Date().getMilliseconds();
+    _this.metypeWidget = React__default.createRef();
     return _this;
   }
 
@@ -180,9 +181,9 @@ var MetypeCommentingWidget = function (_React$Component) {
       var _this2 = this;
 
       !window.talktype && scriptLoader(this.props.host, function () {
-        return _this2.initWidget(_this2.randomNumber);
+        return _this2.initWidget();
       });
-      this.initWidget(this.randomNumber);
+      this.initWidget();
     }
   }, {
     key: "metypeToggleButton",
@@ -196,12 +197,12 @@ var MetypeCommentingWidget = function (_React$Component) {
     }
   }, {
     key: "initWidget",
-    value: function initWidget(randomNumber) {
+    value: function initWidget() {
       if (window.talktype) {
         this.props.jwt && window.talktype.accountUserLogin({
           jwt: this.props.jwt
         });
-        window.talktype.commentWidgetIframe(document.getElementById("metype-container-" + randomNumber));
+        window.talktype.commentWidgetIframe(this.metypeWidget);
       }
     }
   }, {
