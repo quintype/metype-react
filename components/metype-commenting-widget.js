@@ -27,7 +27,7 @@ class MetypeCommentingWidget extends React.Component {
       this.props.jwt && window.talktype.accountUserLogin({
         jwt: this.props.jwt
       });
-      window.talktype.commentWidgetIframe(this.metypeWidge);
+      window.talktype.commentWidgetIframe(this.metypeWidget);
     }
   }
 
@@ -35,7 +35,7 @@ class MetypeCommentingWidget extends React.Component {
     const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor, pageURL, windowHeight, windowWidth, fontUrl, fontFamily} = this.props;
     return <div>
       <div id={`metype-container-${this.randomNumber}`}
-           ref={el => this.metypeWidge = el}
+           ref={el => this.metypeWidget = el}
            className={`iframe-container ${className}`}
            data-metype-account-id={accountId}
            data-metype-host={host} //Change fallback to deployed domain name
